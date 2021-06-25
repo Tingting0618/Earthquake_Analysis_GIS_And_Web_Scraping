@@ -1,37 +1,34 @@
-## Data Question 4: Web Scraping Earthquake Data
+# Earthquake Since 1900 -  GIS Programming and Web Scraping with Python
 
-### Part 1:
-Nate Silver discusses the difficulty of predicting earthquakes in **The Signal and the Noise**. Nevertheless, we will try to identify some patterns by analyzing the deadly earthquakes that have occurred since 1900.
+## Goal/inspiration
+Nate Silver discusses the difficulty of predicting earthquakes in **The Signal and the Noise**. Nevertheless, we will review earthquakes that have occurred since 1900.
 
-To start, read the table of earthquakes from https://en.wikipedia.org/wiki/List_of_deadly_earthquakes_since_1900 using the `requests` and/or `beautifulsoup` library and load it to a pandas dataframe. You will need to do some data cleaning before you can proceed.
+To start, we read the table of earthquakes from https://en.wikipedia.org/wiki/List_of_deadly_earthquakes_since_1900 using the `requests` and/or `beautifulsoup` library and load it to a pandas dataframe.
 
-Data cleaning tasks include:
+Data cleaning includes:
 
-* Replace empty strings with NaN
-* Remove the footnotes from the 'Other Source Deaths' column
-* Convert Magnitude to a numeric type. For this portion, you can ignore differences in seismic magnitude scales.
-* Correct number of deaths when there is more than one value. When there is more than one value given, choose the largest.
-* Create a new column ('deaths') that evaluates the four total-death columns ('PDE Total Deaths', 'Utsu Total Deaths', 'EM-DAT Total Deaths', and 'Other Source Deaths') and populates the new column with the highest value.
-* Explore the data in terms of when and where earthquakes occurred and how severe they were (magnitude, deaths, secondary effects).
+* Replaced empty strings with NaN
+* Removed the footnotes from the 'Other Source Deaths' column
+* Converted Magnitude to a numeric type.
+* Corrected number of deaths when there is more than one value. When there is more than one value given, we chose the largest.
+* Created a new column ('deaths') that evaluates the four total-death columns ('PDE Total Deaths', 'Utsu Total Deaths', 'EM-DAT Total Deaths', and 'Other Source Deaths') and populates the new column with the highest value.
+* Explored the data in terms of when and where earthquakes occurred and how severe they were (magnitude, deaths, secondary effects).
 
-Also, add any supplemental data you'd like in order to explore ideas related to earthquake occurrence and effects, but understand that it is not required.
-
-Answer the following questions:
-
-1. Are there factors that make an earthquake more likely?
-2. Are there factors that make an earthquake more deadly?
+![by year](https://user-images.githubusercontent.com/44503223/123418559-cb663200-d57e-11eb-98e8-33f7be9209ac.gif)
  
-### Part 2:
-Use the `requests` library and the USGS's API (https://earthquake.usgs.gov/fdsnws/event/1/) to retrieve information about all recorded earthquakes that occurred in Tennessee since 1900.
-Answer the following questions:
+## Tenessee Earthquake Observations
+To start, we used the `requests` library and the USGS's API (https://earthquake.usgs.gov/fdsnws/event/1/) to retrieve information about all recorded earthquakes that occurred in Tennessee since 1900.
+![TnEarthquakeByLat/Lng](https://user-images.githubusercontent.com/44503223/123421233-35cca180-d582-11eb-8a68-88b5fc7d8adf.png)
 
-1. How many earthquakes are in the dataset? Which region of Tennessee seems to be the most prone to earthquakes? Which is the least prone?
-2. Do the magnitudes of earthquakes seem to follow the distribution described by Nate Silver. That is, one higher magnitude is ten times less likely to occur?
+Then, we downloaded the US County Boundaries.geojson from https://public.opendatasoft.com/explore/dataset/us-county-boundaries/download/?format=geojson&timezone=America/Chicago&lang=en.
 
-### Part 3:
-Based on your findings from Parts 1 and 2, put together a presentation for the Tennessee Earthquake Preparedness Group to help them answer the following two questions:
-1. Is it advisable to concentrate our resources in the four major metropolitan areas (Memphis, Nashville, Chattanooga, Knoxville)?
+Lastly, we spatial joined earthquake's lat/long with the geojson file.
+![overview](https://user-images.githubusercontent.com/44503223/123421794-f3579480-d582-11eb-8383-88b7f817645d.png)
 
-2. How should we allocate resources amongst these areas?
-    * Which area is likely to experience an earthquake?
-    * Which area is likely to suffer loss from an earthquake if one hits?
+![death](https://user-images.githubusercontent.com/44503223/123421916-1da95200-d583-11eb-8726-3846b5508d22.png)
+
+
+## Learn More
+
+You can learn more in the [Tingting Duan's Project Portfolio](https://tingting0618.github.io).
+
