@@ -18,14 +18,22 @@ Data cleaning includes:
  
 ## Tenessee Earthquake Observations
 To start, we used the `requests` library and the USGS's API (https://earthquake.usgs.gov/fdsnws/event/1/) to retrieve information about all recorded earthquakes that occurred in Tennessee since 1900.
+
 ![TnEarthquakeByLat/Lng](https://user-images.githubusercontent.com/44503223/123421233-35cca180-d582-11eb-8a68-88b5fc7d8adf.png)
 
 Then, we downloaded the US County Boundaries.geojson from https://public.opendatasoft.com/explore/dataset/us-county-boundaries/download/?format=geojson&timezone=America/Chicago&lang=en.
 
-Lastly, we spatial joined earthquake's lat/long with the geojson file.
+Lastly, we spatial joined the earthquake's lat/long with the geojson file.
+
+This chart maps all earthquake in TN since 1900.
+
 ![overview](https://user-images.githubusercontent.com/44503223/123421794-f3579480-d582-11eb-8383-88b7f817645d.png)
 
+But more importantly, some earthquakes are more deadly than others. 
+
 ![death](https://user-images.githubusercontent.com/44503223/123421916-1da95200-d583-11eb-8726-3846b5508d22.png)
+
+Based on the findings, we would like to recommend the Tennessee Earthquake Preparedness Group concentrate more resources in the two major metropolitan areas (Knoxville, Chattanooga), and Lake and Dyer Counties.
 
 
 ## Learn More
