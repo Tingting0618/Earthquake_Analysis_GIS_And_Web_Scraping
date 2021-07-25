@@ -38,5 +38,5 @@ Based on the findings, we would like to recommend the Tennessee Earthquake Prepa
 
 ## Learn More
 
-You can learn more in the [Tingting Duan's Project Portfolio](https://tingting0618.github.io).
+For more information, please check out the [Project Portfolio](https://tingting0618.github.io).
 
